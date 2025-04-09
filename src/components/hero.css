@@ -213,3 +213,45 @@ h1{
         padding: 0 2rem;
     }
 }
+
+:root {
+  --s: 320px;     /* size of the frame */
+  --b: 8px;       /* border thickness on hover */
+  --g: 16px;      /* gap on hover */
+  --c: #F89B29;   /* border color */
+}
+
+.diamond-wrapper {
+  position: relative;
+  background: #2E507F;
+}
+
+.diamond-frame {
+  position: absolute;
+  top: -50vh;
+  left: 60vw;
+  width: var(--s);
+  height: var(--s);
+  transform: rotate(55deg);
+  overflow: hidden;
+  border-radius: 10px;
+  z-index: 10;
+
+  /* Initial outline */
+  outline: var(--b) solid var(--c);
+  outline-offset: var(--g);
+  transition: outline 0.4s ease, outline-offset 0.4s ease;
+  cursor: pointer;
+}
+
+.diamond-frame:hover {
+  outline: calc(var(--b) + 2px) solid var(--c); /* slightly thicker on hover */
+  outline-offset: calc(var(--g) + 6px);         /* pulls it further out */
+}
+
+.diamond-img {
+  width: 138%;
+  height: 139%;
+  object-fit: cover;
+  transform: rotate(-55deg) translate(3%, -19.7%);
+}

@@ -3,6 +3,7 @@ import './hero.css';
 import RotatingText from './RotatingText';
 import gsap from 'https://cdn.skypack.dev/gsap@3.12.2'
 import { ScrollTrigger } from 'https://cdn.skypack.dev/gsap@3.12.2/ScrollTrigger';
+import Photo from '../assets/Photo.png/';
 
 export default function Hero() {
   const heroRef = useRef(null);
@@ -70,7 +71,7 @@ export default function Hero() {
   return (
     <section className="main" ref={heroRef}>
       <h1>
-        Gˊdayˏ Iˊm<br />
+        Helloˏ Iˊm<br />
         <span id="name">Shivansh Bhargavaˏ</span>
         <br/>
         <div className="roller">
@@ -113,6 +114,15 @@ export default function Hero() {
         <div className='wave -two'></div>
         <div className='wave -three'></div>
       </div>
+
+      
+      <div className="diamond-wrapper">
+      <div className="diamond-frame fancy-frame">
+        <img src={Photo} alt="Framed" className="diamond-img" />
+      </div>
+    </div>
+      
+
     </section>
   );
 }

@@ -1,130 +1,278 @@
 import './About.css';
 import { useRef, useEffect } from 'react';
-import gsap from 'https://cdn.skypack.dev/gsap@3.12.2'
+import gsap from 'https://cdn.skypack.dev/gsap@3.12.2';
 import { ScrollTrigger } from 'https://cdn.skypack.dev/gsap@3.12.2/ScrollTrigger';
-
+// import Skills from './Skills';
+import {
+  FaGithub,
+  FaLinkedin,
+  FaCode,
+  FaTwitter,
+  FaEnvelope
+} from 'react-icons/fa';
+import {
+  FaReact,
+  FaNodeJs,
+  FaJs,
+  FaHtml5,
+  FaCss3Alt,
+  FaGitAlt,
+  FaPython,
+  FaDocker
+} from 'react-icons/fa';
+import { SiTypescript, SiMongodb, SiExpress, SiTailwindcss } from 'react-icons/si';
+import { useScroll, animated, useSpring } from '@react-spring/web';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
-    const aboutRef = useRef(null);
-    const titleRef = useRef(null);
-    const containerRef = useRef(null);
-    const contentRef = useRef(null);
+  const aboutRef = useRef(null);
+  const titleRef = useRef(null);
+  const containerRef = useRef(null);
+  const contentRef = useRef(null);
+  const introRef = useRef(null);
+  const expertiseRef = useRef(null);
+  const philosophyRef = useRef(null);
+  const socialsRef = useRef(null);
+  const skillsRef = useRef(null);
+  const circleRef = useRef(null);
 
-    useEffect(() => {
-        const about = aboutRef.current;
-        const title = titleRef.current;
-        const container = containerRef.current;
-        const content = contentRef.current;
+  const { scrollYProgress } = useScroll({
+    container: aboutRef,
+    onChange: ({ value: { scrollYProgress } }) => {
+      if (scrollYProgress > 0.7) {
+        circleRef.current.style.transform = `translateX(-50%) scale(${scrollYProgress})`;
+      }
+    },
+    default: {
+      immediate: true,
+    },
+  });
 
-        gsap.fromTo(about,
-            {
-                clipPath: 'ellipse(0% 0% at 50% 50%)',
-                opacity: 0
-            },
-            {
-                clipPath: 'ellipse(100% 100% at 50% 50%)',
-                opacity: 1,
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: about,
-                    start: 'top 100%',
-                    end: 'top 0%',
-                    scrub: 3,
-                    toggleActions: 'play none none reverse',
-                },
-            }
-        );
+  useEffect(() => {
+    const about = aboutRef.current;
+    const title = titleRef.current;
+    const container = containerRef.current;
+    const content = contentRef.current;
 
-        // Scroll animation for about section
-        gsap.to(about, {
-            y: -100,
-            duration: 3,
-            scrollTrigger: {
-                trigger: about,
-                start: 'top 100%',
-                end: 'top 0%',
-                scrub: 3,
-                toggleActions: 'play none none reverse'
-            }
-        });
-
-        gsap.from(title, {
-            y: 100,
-            opacity: 1,
-            duration: 5,
-            scrollTrigger: {
-                trigger: about,
-                start: 'top 100%',
-                end: 'top 0%',
-                scrub: 3
-            }
-        });
-
-        // gsap.from(container, {
-        //     y: 50,
-        //     opacity: 0,
-        //     duration: 3,
-        //     scrollTrigger: {
-        //         trigger: about,
-        //         start: 'top 0%',
-        //         end: 'top 20%',
-        //         scrub: 1
-        //     }
-        // });
-
-        // gsap.from(content, {
-        //     y: 30,
-        //     opacity: 0,
-        //     duration: 2,
-        //     delay: 0.5,
-        //     scrollTrigger: {
-        //         trigger: content,
-        //         start: 'top 80%',
-        //         end: 'top 50%',
-        //         scrub: 1
-        //     }
-        // });
-
-        return () => {
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-        };
-    }, []);
-
-    return (
-        <section className="about-section" id="about" ref={aboutRef}>
-            <div className="about-container" ref={containerRef}>
-                <h2 className="about-title" ref={titleRef}>About Me</h2>
-                <div className="about-content" ref={contentRef}>
-                    <div className="about-text">
-                        <p>
-                            I'm a passionate developer with a keen interest in creating beautiful and functional web applications.
-                            My journey in web development started with a curiosity about how things work on the internet,
-                            and it has grown into a full-fledged passion for building digital experiences.
-                        </p>
-                        <p>
-                            I specialize in modern web technologies and frameworks, focusing on creating responsive,
-                            accessible, and performant applications. When I'm not coding, you can find me exploring
-                            new technologies, contributing to open-source projects, or working on personal projects
-                            that challenge my skills.
-                        </p>
-                    </div>
-                    <div className="about-stats">
-                        <div className="stat-item">
-                            <h3>2+</h3>
-                            <p>Years Experience</p>
-                        </div>
-                        <div className="stat-item">
-                            <h3>10+</h3>
-                            <p>Projects Completed</p>
-                        </div>
-                        <div className="stat-item">
-                            <h3>5+</h3>
-                            <p>Technologies Mastered</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    gsap.fromTo(
+      about,
+      {
+        clipPath: 'ellipse(0% 0% at 50% 50%)',
+        opacity: 0
+      },
+      {
+        clipPath: 'ellipse(100% 100% at 50% 50%)',
+        opacity: 1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: about,
+          start: 'top 80%',
+          end: 'top 0%',
+          scrub: 3,
+          toggleActions: 'play none none reverse'
+        }
+      }
     );
+
+    gsap.to(about, {
+      y: 18,
+      duration: 3,
+      scrollTrigger: {
+        trigger: about,
+        start: 'top 80%',
+        end: 'top 0%',
+        scrub: 3
+      }
+    });
+
+    gsap.from(titleRef.current, {
+      y: 100,
+      duration: 5,
+      scrollTrigger: {
+        trigger: about,
+        start: 'top 100%',
+        end: 'top 0%',
+        scrub: 3
+      }
+    });
+
+    gsap.from(containerRef.current, {
+      y: 50,
+      duration: 3,
+      scrollTrigger: {
+        trigger: about,
+        start: 'top 80%',
+        end: 'top 20%',
+        scrub: 3
+      }
+    });
+
+    gsap.from(contentRef.current, {
+      y: 30,
+      duration: 2,
+      delay: 3.5,
+      scrollTrigger: {
+        trigger: contentRef.current,
+        start: 'top 80%',
+        end: 'top 50%',
+        scrub: 3
+      }
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        } else {
+          entry.target.classList.remove('animate-in');
+        }
+      });
+    }, observerOptions);
+
+    const elementsToObserve = [
+      introRef.current,
+      expertiseRef.current,
+      philosophyRef.current,
+      socialsRef.current,
+      skillsRef.current
+    ];
+
+    elementsToObserve.forEach(el => {
+      if (el) {
+        observer.observe(el);
+      }
+    });
+
+    // Observe each skill item
+    const skillItems = document.querySelectorAll('.skill-item');
+    skillItems.forEach(item => {
+      observer.observe(item);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  const linkStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.8rem',
+    color: '#F1FAEF',
+    textDecoration: 'none',
+    backgroundColor: 'rgba(248, 155, 41, 0.1)',
+    padding: '0.8rem 1.2rem',
+    borderRadius: '12px',
+    transition: 'all 0.3s ease',
+    fontSize: '1rem',
+    border: '1px solid rgba(248, 155, 41, 0.2)',
+    ':hover': {
+      backgroundColor: 'rgba(248, 155, 41, 0.2)',
+      transform: 'translateY(-2px)'
+    }
+  };
+
+  const skills = [
+    { name: 'JavaScript', icon: <FaJs /> },
+    { name: 'React', icon: <FaReact /> },
+    { name: 'HTML5', icon: <FaHtml5 /> },
+    { name: 'CSS3', icon: <FaCss3Alt /> },
+    { name: 'Python', icon: <FaPython /> },
+    { name: 'C++', icon: <FaCode /> }
+  ];
+
+  return (
+    <section className="about-section" id="about" ref={aboutRef}>
+      <div className="about-container" ref={containerRef}>
+        <div className="about-title" ref={titleRef}>
+          <h2>About Me</h2>
+          <div className="title-divider"></div>
+        </div>
+
+        <div className="about-content" ref={contentRef}>
+          <div className="about-text">
+            <p className="intro" ref={introRef}>
+              Hello! I'm a passionate full-stack developer with a strong focus on creating 
+              elegant and efficient solutions. My journey in technology began with a 
+              fascination for problem-solving and has evolved into a deep love for 
+              building impactful digital experiences.
+            </p>
+            <p className="expertise" ref={expertiseRef}>
+              With expertise in modern web technologies like React, Node.js, and 
+              various cloud platforms, I specialize in crafting responsive, 
+              scalable applications that deliver exceptional user experiences. 
+              My approach combines clean code architecture with thoughtful design 
+              principles to create solutions that are both functional and beautiful.
+            </p>
+            <p className="philosophy" ref={philosophyRef}>
+              I believe in the power of continuous learning and collaboration. 
+              Whether it's contributing to open-source projects, exploring new 
+              technologies, or mentoring others, I'm always excited to push 
+              boundaries and make a difference in the tech community.
+            </p>
+          </div>
+
+          <div className="contacts" ref={socialsRef}>
+            <h3>Socials</h3>
+            <div className="social-links">
+              <a
+                href="https://github.com/ShivanshBhargava"
+                target="_blank"
+                rel="noreferrer"
+                className="social-link"
+              >
+                <FaGithub /> GitHub
+              </a>
+              <a
+                href="https://www.linkedin.com/in/shivansh-bhargava-0a5280330/"
+                target="_blank"
+                rel="noreferrer"
+                className="social-link"
+              >
+                <FaLinkedin /> LinkedIn
+              </a>
+              <a
+                href="https://codeforces.com/profile/LoneLight"
+                target="_blank"
+                rel="noreferrer"
+                className="social-link"
+              >
+                <FaCode /> CodeForces
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="skills-section" ref={skillsRef}>
+          <h3>Technical Skills</h3>
+          <div className="title-divider"></div>
+          <div className="skills-grid">
+            {skills.map((skill, index) => (
+              <div 
+                key={index} 
+                className="skill-item"
+              >
+                <div className="skill-icon">{skill.icon}</div>
+                <div className="skill-info">
+                  <span className="skill-name">{skill.name}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

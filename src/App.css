@@ -3,10 +3,37 @@
 html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
   overflow-y: scroll;
   overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+/* Ensure content is above the scroll bars */
+.about-section,
+.skills-section,
+.hero-section,
+.navbar {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hide scrollbar but keep functionality */
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
 }
 
