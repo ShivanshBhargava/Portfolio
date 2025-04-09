@@ -20,7 +20,7 @@ import {
   FaPython,
   FaDocker
 } from 'react-icons/fa';
-import { SiTypescript, SiMongodb, SiExpress, SiTailwindcss } from 'react-icons/si';
+import { SiTypescript, SiMongodb, SiExpress, SiTailwindcss, SiLeetcode } from 'react-icons/si';
 import { useScroll, animated, useSpring } from '@react-spring/web';
 gsap.registerPlugin(ScrollTrigger);
 
@@ -250,6 +250,14 @@ export default function About() {
                 className="social-link"
               >
                 <FaCode /> CodeForces
+              </a>
+              <a
+                href="https://leetcode.com/u/LoneLight/"
+                target="_blank"
+                rel="noreferrer"
+                className="social-link"
+              >
+                <SiLeetcode /> Leetcode
               </a>
             </div>
           </div>
