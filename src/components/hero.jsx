@@ -25,7 +25,7 @@ export default function Hero() {
       width: '100%',
       height: '100vh',
       zIndex: 2,
-      opacity: 1 // Ensure it's visible from the start
+      opacity: 1
     });
 
     // Add scroll animations
@@ -65,11 +65,14 @@ export default function Hero() {
   }, []);
 
   const handleContactClick = () => {
-    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
-    <section className="main" ref={heroRef}>
+    <section className="main" ref={heroRef} id="home">
       <h1>
         Helloˏ Iˊm<br />
         <span id="name">Shivansh Bhargavaˏ</span>
@@ -115,14 +118,11 @@ export default function Hero() {
         <div className='wave -three'></div>
       </div>
 
-      
       <div className="diamond-wrapper">
-      <div className="diamond-frame fancy-frame">
-        <img src={Photo} alt="Framed" className="diamond-img" />
+        <div className="diamond-frame fancy-frame">
+          <img src={Photo} alt="Framed" className="diamond-img" />
+        </div>
       </div>
-    </div>
-      
-
     </section>
   );
 }

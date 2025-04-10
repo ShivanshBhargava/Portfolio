@@ -168,7 +168,7 @@ export default function Contact() {
                     animate={{ rotate: 360 }}
                     transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                   >
-                    ⚡
+                      ↻  
                   </motion.span>
                 ) : (
                   'Send Message'
@@ -182,7 +182,7 @@ export default function Contact() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                 >
-                  Message sent successfully! 🎉
+                  Thank You for Connecting!!
                 </motion.div>
               )}
             </form>

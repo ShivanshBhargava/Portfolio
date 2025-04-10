@@ -83,8 +83,11 @@ h1{
   50%{
     top: -8rem;
   }
-  72.5%{
-    top: -12.25rem;
+  75%{
+    top: -12rem;
+  }
+  100%{
+    top: -16rem;
   }
 }
 
@@ -98,7 +101,7 @@ h1{
   }
   
   #name {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -223,7 +226,6 @@ h1{
 
 .diamond-wrapper {
   position: relative;
-  background: #2E507F;
 }
 
 .diamond-frame {
@@ -254,4 +256,190 @@ h1{
   height: 139%;
   object-fit: cover;
   transform: rotate(-55deg) translate(3%, -19.7%);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+  .main {
+    width: 100%;
+    padding: 0 3rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  #name {
+    font-size: 3.5rem;
+  }
+
+  .diamond-frame {
+    left: 58vw;
+  }
+
+  .box {
+    margin-left: 60vw;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .main {
+    margin-top: 5rem;
+    padding: 0 2.5rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  #name {
+    font-size: 2.5rem;
+  }
+
+  .text-rotate-main {
+    font-size: 1.4rem;
+  }
+
+  .roller {
+    height: 3rem;
+    line-height: 3rem;
+  }
+
+  .Text {
+    width: 80vw;
+    text-align: center;
+  }
+
+  .diamond-frame {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: 3rem;
+    transform: rotate(0deg);
+    overflow: hidden;
+  }
+
+  .diamond-img {
+    margin-top: -3rem;
+    margin-left: -3rem;
+    transform: rotate(0deg) translate(0, 0);
+  }
+
+  .box {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    margin-top: 5rem;
+    padding: 0 2.5rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  #name {
+    font-size: 2.5rem;
+  }
+
+  .text-rotate-main {
+    font-size: 1.4rem;
+  }
+
+  .roller {
+    height: 3rem;
+    line-height: 3rem;
+  }
+
+  .Text {
+    width: 80vw;
+    text-align: center;
+  }
+
+  .diamond-frame {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: 3rem;
+    transform: rotate(0deg);
+    overflow: hidden;
+  }
+
+  .diamond-img {
+    margin-top: -3rem;
+    margin-left: -3rem;
+    transform: rotate(0deg) translate(0, 0);
+  }
+
+  .box {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .main {
+    padding: 0 1rem;
+    margin-top: 2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  #name {
+    font-size: 2rem;
+  }
+
+  .text-rotate-main {
+    font-size: 1.2rem;
+  }
+
+  .roller {
+    height: 2.5rem;
+    line-height: 2.5rem;
+  }
+
+  .Text {
+    width: 90vw;
+    font-size: 1rem;
+  }
+
+  .ContactMe {
+    height: 3rem;
+    width: 8rem;
+    font-size: 0.7rem;
+  }
+
+  .diamond-frame {
+    --s: 240px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  #name {
+    font-size: 1.8rem;
+  }
+
+  .text-rotate-main {
+    font-size: 1rem;
+  }
+
+  .roller {
+    height: 2rem;
+    line-height: 2rem;
+  }
+
+  .diamond-frame {
+    --s: 200px;
+  }
 }
