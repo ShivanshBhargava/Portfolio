@@ -5,12 +5,12 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { useInView } from 'react-intersection-observer';
 import Chapter463 from'../assets/Chapter463.png'
 import AITrends from'../assets/AITrends.png'
-
+import Portfolio from '../assets/Portfolio.png'
 const projects = [
   {
     title: "Portfolio Website",
     description: "A modern, responsive portfolio website built with React and Framer Motion. Features smooth animations, custom cursor, and interactive UI elements.",
-    image: "https://via.placeholder.com/600x400",
+    image: Portfolio,
     tags: ["React", "Framer Motion", "GSAP", "CSS3", "HTML"],
     github: "https://github.com/ShivanshBhargava/Portfolio/tree/main",
     demo: "https://yourportfolio.com",
