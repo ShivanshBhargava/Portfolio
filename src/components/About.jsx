@@ -204,17 +204,14 @@ export default function About() {
         <div className="about-content" ref={contentRef}>
           <div className="about-text">
             <p className="intro" ref={introRef}>
-              Hello! I'm a passionate full-stack developer with a strong focus on creating 
-              elegant and efficient solutions. My journey in technology began with a 
-              fascination for problem-solving and has evolved into a deep love for 
-              building impactful digital experiences.
+            Hi! I’m a frontend developer who enjoys building clean, responsive, and interactive web interfaces. I 
+            love turning ideas into smooth user experiences using HTML, CSS, JavaScript, and modern tools. 
+            Always eager to learn and grow.
             </p>
             <p className="expertise" ref={expertiseRef}>
-              With expertise in modern web technologies like React, Node.js, and 
-              various cloud platforms, I specialize in crafting responsive, 
-              scalable applications that deliver exceptional user experiences. 
-              My approach combines clean code architecture with thoughtful design 
-              principles to create solutions that are both functional and beautiful.
+            I specialize in creating responsive, user-friendly web interfaces using modern frontend technologies 
+            like HTML, CSS, JavaScript, and React. I focus on writing clean, efficient code and applying 
+            thoughtful design principles to build websites that are both functional and visually appealing.
             </p>
             <p className="philosophy" ref={philosophyRef}>
               I believe in the power of continuous learning and collaboration. 

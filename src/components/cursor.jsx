@@ -36,7 +36,7 @@ export default function Cursor() {
           x: pointerX.get() - initialX,
           y: pointerY.get() - initialY,
         },
-        { type: "spring", stiffness: 100, damping: 10 }
+        { type: "spring", stiffness: 100, damping: 20 }
       )
       animate(
         dot,
@@ -44,7 +44,7 @@ export default function Cursor() {
           x: pointerX.get() - dotInitialX,
           y: pointerY.get() - dotInitialY,
         },
-        { type: "spring", stiffness: 100, damping: 13 }
+        { type: "spring", stiffness: 100, damping: 15 }
       )
     }
 
