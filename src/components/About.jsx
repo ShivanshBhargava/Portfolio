@@ -2,7 +2,7 @@ import './About.css';
 import { useRef, useEffect } from 'react';
 import gsap from 'https://cdn.skypack.dev/gsap@3.12.2';
 import { ScrollTrigger } from 'https://cdn.skypack.dev/gsap@3.12.2/ScrollTrigger';
-// import Skills from './Skills';
+//for socials
 import {
   FaGithub,
   FaLinkedin,
@@ -10,6 +10,7 @@ import {
   FaTwitter,
   FaEnvelope
 } from 'react-icons/fa';
+//for techStack
 import {
   FaReact,
   FaNodeJs,
@@ -20,7 +21,9 @@ import {
   FaPython,
   FaDocker
 } from 'react-icons/fa';
-import { SiTypescript, SiMongodb, SiExpress, SiTailwindcss, SiLeetcode } from 'react-icons/si';
+
+import { SiTypescript, SiMongodb, SiExpress, SiTailwindcss, SiLeetcode, SiCodeforces } from 'react-icons/si';
+
 import { useScroll, animated, useSpring } from '@react-spring/web';
 gsap.registerPlugin(ScrollTrigger);
 
@@ -190,7 +193,7 @@ export default function About() {
     { name: 'HTML5', icon: <FaHtml5 /> },
     { name: 'CSS3', icon: <FaCss3Alt /> },
     { name: 'Python', icon: <FaPython /> },
-    { name: 'C++', icon: <FaCode /> }
+    { name: 'C++', icon: <SiCodeforces /> }
   ];
 
   return (
@@ -246,7 +249,7 @@ export default function About() {
                 rel="noreferrer"
                 className="social-link"
               >
-                <FaCode /> CodeForces
+                <SiCodeforces /> CodeForces
               </a>
               <a
                 href="https://leetcode.com/u/LoneLight/"
