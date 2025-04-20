@@ -24,7 +24,7 @@ import {
 
 import { SiTypescript, SiMongodb, SiExpress, SiTailwindcss, SiLeetcode, SiCodeforces } from 'react-icons/si';
 
-import { useScroll, animated, useSpring } from '@react-spring/web';
+// import { useScroll, animated, useSpring } from '@react-spring/web';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
@@ -37,7 +37,6 @@ export default function About() {
   const philosophyRef = useRef(null);
   const socialsRef = useRef(null);
   const skillsRef = useRef(null);
-  const circleRef = useRef(null);
 
   useEffect(() => {
     const about = aboutRef.current;
@@ -51,10 +50,10 @@ export default function About() {
       {
         clipPath: 'ellipse(100% 100% at 50% 50%)',
         opacity: 1,
-        ease: 'power2.out',
+        ease: 'power1.out',
         scrollTrigger: {
           trigger: about,
-          start: 'top 40%',
+          start: 'top 70%',
           end: 'top 0%',
           scrub: 3,
           toggleActions: 'play none none reverse'
@@ -64,47 +63,18 @@ export default function About() {
 
     gsap.to(about, {
       y: 18,
-      duration: 3,
-      scrollTrigger: {
-        trigger: about,
-        start: 'top 80%',
-        end: 'top 0%',
-        scrub: 3
-      }
     });
 
     gsap.from(titleRef.current, {
       y: 100,
-      duration: 5,
-      scrollTrigger: {
-        trigger: about,
-        start: 'top 100%',
-        end: 'top 0%',
-        scrub: 3
-      }
     });
 
     gsap.from(containerRef.current, {
       y: 50,
-      duration: 3,
-      scrollTrigger: {
-        trigger: about,
-        start: 'top 80%',
-        end: 'top 20%',
-        scrub: 3
-      }
     });
 
     gsap.from(contentRef.current, {
       y: 30,
-      duration: 2,
-      delay: 3.5,
-      scrollTrigger: {
-        trigger: contentRef.current,
-        start: 'top 80%',
-        end: 'top 50%',
-        scrub: 3
-      }
     });
 
     return () => {
