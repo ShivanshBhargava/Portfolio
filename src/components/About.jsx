@@ -39,23 +39,8 @@ export default function About() {
   const skillsRef = useRef(null);
   const circleRef = useRef(null);
 
-  const { scrollYProgress } = useScroll({
-    container: aboutRef,
-    onChange: ({ value: { scrollYProgress } }) => {
-      if (scrollYProgress > 0.7) {
-        circleRef.current.style.transform = `translateX(-50%) scale(${scrollYProgress})`;
-      }
-    },
-    default: {
-      immediate: true,
-    },
-  });
-
   useEffect(() => {
     const about = aboutRef.current;
-    const title = titleRef.current;
-    const container = containerRef.current;
-    const content = contentRef.current;
 
     gsap.fromTo(
       about,
@@ -69,7 +54,7 @@ export default function About() {
         ease: 'power2.out',
         scrollTrigger: {
           trigger: about,
-          start: 'top 80%',
+          start: 'top 40%',
           end: 'top 0%',
           scrub: 3,
           toggleActions: 'play none none reverse'
@@ -168,24 +153,6 @@ export default function About() {
       observer.disconnect();
     };
   }, []);
-
-  const linkStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '0.8rem',
-    color: '#F1FAEF',
-    textDecoration: 'none',
-    backgroundColor: 'rgba(248, 155, 41, 0.1)',
-    padding: '0.8rem 1.2rem',
-    borderRadius: '12px',
-    transition: 'all 0.3s ease',
-    fontSize: '1rem',
-    border: '1px solid rgba(248, 155, 41, 0.2)',
-    ':hover': {
-      backgroundColor: 'rgba(248, 155, 41, 0.2)',
-      transform: 'translateY(-2px)'
-    }
-  };
 
   const skills = [
     { name: 'JavaScript', icon: <FaJs /> },
